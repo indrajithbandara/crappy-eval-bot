@@ -55,3 +55,25 @@ This is run in the discord chat. Lines beginning with `//` are notes.
 
 // Ded.
 ```
+
+## Main security concerns
+
+This lets anyone execute commands under your bot account while the bot is running.
+You can potentially exploit this to access an account with higher permissions
+than your own account if the bot has higher permissions than you do.
+
+Also, your bot token can be leaked simply by running:
+
+```
+#!exec
+with open('token.txt') as fp:
+    bucket['token'] = fp.read().strip()
+```
+and then
+```
+#!aeval ctx.send(bucket['token'])
+```
+
+Oh... and you can access the entire PC as the bot process can... so yeah...
+Probably best to never run this ever. In fact, you should stop reading this
+now. Go away. Shoo. Begone.
