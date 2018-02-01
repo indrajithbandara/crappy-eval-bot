@@ -1,6 +1,8 @@
 # crappy-eval-bot
 Sometimes you just need a bot that can eval stuff. This is very unsafe and should not be used ever.
 
+Oh. This uses the Discord.py rewrite too, not the async-branch version. So... yeah.
+
 ## Usage:
 
 Your command prefix is `#!`. Stick your token as plaintext in `token.txt` before running the 
